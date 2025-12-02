@@ -1156,6 +1156,8 @@ div#overlay-cover {
         text-align: center;
         margin-left: 0;
         height: 1rem;
+        filter: opacity(0.4);
+        color: #fff;
     }
 
     div#overlay-label span.decofont {

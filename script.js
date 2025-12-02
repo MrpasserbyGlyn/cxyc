@@ -211,6 +211,7 @@ function overlayNumber(type, shouldMobile = false, onlyMobile = false) {
     if (onlyMobile && window.innerWidth > 800) {
         return;
     }
+    overlayNumber.removeAttribute("style");
 
     switch (type) { // 别骂我区，我真没时间给你写优雅的实现方式了
         case "pos1":
@@ -249,7 +250,6 @@ function overlayNumber(type, shouldMobile = false, onlyMobile = false) {
             outOfFinalRecord();
             break;
         case "fade-out-end":
-            overlayNumber.style.animation = "unset";
             overlayNumber.classList.add("end-fade-out");
             break;
     }
@@ -257,14 +257,14 @@ function overlayNumber(type, shouldMobile = false, onlyMobile = false) {
 
 function intoFinalRecord() {
     let overlayNumber = document.getElementById("overlay-number");
-    overlayNumber.style.animation = "unset";
+    overlayNumber.removeAttribute("style");
     overlayNumber.classList.add("final-record");
     overlayNumber.classList.remove("end");
 }
 
 function outOfFinalRecord() {
     let overlayNumber = document.getElementById("overlay-number");
-    overlayNumber.style.animation = "unset";
+    overlayNumber.removeAttribute("style");
     overlayNumber.classList.add("end");
     overlayNumber.classList.remove("end-fade-out");
 }
